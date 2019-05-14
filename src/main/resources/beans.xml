@@ -1,0 +1,71 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--     bean definitions here-->
+<!--    <bean id ="movie" class="com.stackroute.springApplication.beans.Movie" scope="prototype">-->
+
+<!--        <constructor-arg name="movieName" value="Conguring" />-->
+
+<!--        <constructor-arg name="actorName" value="Robert Jr" />-->
+
+<!--        <constructor-arg name="genre" value="Horror" />-->
+<!--    </bean>-->
+
+
+<!--   </bean>&ndash;&gt;-->
+
+    <bean id = "movie2" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
+        <property name="movieName" value="URI"/>
+        <property name="actorNAme" value="Vicky Kaushal"/>
+        <property name="genre" value="Action"/>
+        <property name="Actor" ref="actor"/>
+
+    </bean>
+
+
+
+
+    <bean id ="actor" class="com.stackroute.springApplication.beans.Actor" scope="prototype">
+
+        <constructor-arg index="0" type="String" value="tony " />
+
+        <constructor-arg index="1" type="String" value="male" />
+
+        <constructor-arg index="2" type= "int" value="8" />
+    </bean>
+
+    <bean id ="actor1" class="com.stackroute.springApplication.beans.Actor" scope="prototype">
+
+        <constructor-arg index="0"  type="String" value="henry " />
+
+        <constructor-arg index="1" type="String" value="male" />
+
+        <constructor-arg index="2" type="int" value="28" />
+
+
+
+
+    </bean>
+
+
+    <bean name = "movie3,movie1" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
+        <constructor-arg index="0" type="String" value="conjuring"/>
+        <constructor-arg  index="1" type="String" value="Vicky "/>
+        <constructor-arg  index="2" type="String" value="horror"/>
+        <constructor-arg   index="3" ref="actor1"/>
+    </bean>
+
+    <!--<bean id = "movie1" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
+        <constructor-arg  index="0" type="String" value="URI"/>
+        <constructor-arg  index="1" type="String" value="Vicky Kaushal"/>
+        <constructor-arg  index="2" type="String" value="Action"/>
+<constructor-arg  index="3" ref="actor"/>
+
+
+
+    </bean>-->
+</beans>
