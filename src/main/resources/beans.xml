@@ -6,36 +6,36 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--     bean definitions here-->
-<!--    <bean id ="movie" class="com.stackroute.springApplication.beans.Movie" scope="prototype">-->
+    <bean id ="movie3" autowire="byName" class="com.stackroute.springApplication.beans.Movie" scope="prototype">-->
 
-<!--        <constructor-arg name="movieName" value="Conguring" />-->
+<!--      <constructor-arg name="movieName" value="Conguring" />-->
 
 <!--        <constructor-arg name="actorName" value="Robert Jr" />-->
 
 <!--        <constructor-arg name="genre" value="Horror" />-->
-<!--    </bean>-->
+</bean>
 
 
 <!--   </bean>&ndash;&gt;-->
 
-    <bean id = "movie2" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
-        <property name="movieName" value="URI"/>
+    <bean id = "movie2" autowire="byName" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
+<!--         <property name="movieName" value="URI"/>
         <property name="actorNAme" value="Vicky Kaushal"/>
         <property name="genre" value="Action"/>
         <property name="Actor" ref="actor"/>
-
+ -->
     </bean>
 
 
 
 
-    <bean id ="actor" class="com.stackroute.springApplication.beans.Actor" scope="prototype">
-
+    <bean id ="actor"  autowire="byName" class="com.stackroute.springApplication.beans.Actor" scope="prototype">
+<!-- 
         <constructor-arg index="0" type="String" value="tony " />
 
         <constructor-arg index="1" type="String" value="male" />
 
-        <constructor-arg index="2" type= "int" value="8" />
+        <constructor-arg index="2" type= "int" value="8" /> -->
     </bean>
 
     <bean id ="actor1" class="com.stackroute.springApplication.beans.Actor" scope="prototype">
