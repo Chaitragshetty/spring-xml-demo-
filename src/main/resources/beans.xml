@@ -17,14 +17,14 @@
 
 
 <!--   </bean>&ndash;&gt;-->
-
+<!-- 
     <bean id = "movie2" autowire="byName" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
 <!--         <property name="movieName" value="URI"/>
         <property name="actorNAme" value="Vicky Kaushal"/>
         <property name="genre" value="Action"/>
         <property name="Actor" ref="actor"/>
  -->
-    </bean>
+    </bean> -->
 
 
 
@@ -38,25 +38,25 @@
         <constructor-arg index="2" type= "int" value="8" /> -->
     </bean>
 
-    <bean id ="actor1" class="com.stackroute.springApplication.beans.Actor" scope="prototype">
+<!--     <bean id ="actor1" class="com.stackroute.springApplication.beans.Actor" scope="prototype">
 
         <constructor-arg index="0"  type="String" value="henry " />
 
         <constructor-arg index="1" type="String" value="male" />
 
         <constructor-arg index="2" type="int" value="28" />
+ -->
 
 
+<!-- 
+    </bean> -->
 
 
-    </bean>
-
-
-    <bean name = "movie3,movie1" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
-        <constructor-arg index="0" type="String" value="conjuring"/>
+    <bean name = "movie1" autowire="byName" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
+<!--         <constructor-arg index="0" type="String" value="conjuring"/>
         <constructor-arg  index="1" type="String" value="Vicky "/>
         <constructor-arg  index="2" type="String" value="horror"/>
-        <constructor-arg   index="3" ref="actor1"/>
+        <constructor-arg   index="3" ref="actor1"/> -->
     </bean>
 
     <!--<bean id = "movie1" class="com.stackroute.springApplication.beans.Movie" scope="prototype">
