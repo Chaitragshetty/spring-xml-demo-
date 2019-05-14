@@ -22,7 +22,7 @@ public class Main {
 
         System.out.println(movie3.toString());
         System.out.println(movie1.toString());
-        System.out.println(movie3==movie1);
+//         System.out.println(movie3==movie1);
 
 //        Resource resource = new ClassPathResource("beans.xml");
 //        BeanFactory beanFactory = new XmlBeanFactory(resource);
