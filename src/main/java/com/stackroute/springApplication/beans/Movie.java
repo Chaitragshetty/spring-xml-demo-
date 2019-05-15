@@ -1,20 +1,31 @@
 package com.stackroute.springApplication.beans;
+import com.stackroute.springApplication.beans.Actor;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
-public class Movie {
+public class Movie implements ApplicationContextAware
+{
     private String movieName;
-    private String actorNAme;
-    private String genre;
+    private String director;
+    private Actor actor;
 
-  Actor actor;
-    public Movie() {
-
+    public Movie() { }
+    @Autowired
+    public Movie(String movieName, String director, Actor actor1) {
+        this.movieName = movieName;
+        this.director = director;
+        this.actor= actor1;
     }
 
-    public Movie(String movieName, String actorNAme, String genre,Actor actor) {
-        this.movieName = movieName;
-        this.actorNAme = actorNAme;
-        this.genre = genre;
-        this.actor=actor;
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "movieName='" + movieName + '\'' +
+                ", director='" + director + '\'' +
+                ", actor=" + actor +
+                '}';
     }
 
     public String getMovieName() {
@@ -25,24 +36,12 @@ public class Movie {
         this.movieName = movieName;
     }
 
-    public String getActorNAme() {
-        return actorNAme;
+    public String getDirector() {
+        return director;
     }
 
-    public void setActorNAme(String actorNAme) {
-        this.actorNAme = actorNAme;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre= genre;
-    }
-
-    public  String welcomeMsg () {
-        return "Welcome !!!";
+    public void setDirector(String director) {
+        this.director = director;
     }
 
     public Actor getActor() {
@@ -54,13 +53,9 @@ public class Movie {
     }
 
     @Override
-    public String toString() {
-        return "Movie{" +
-                "movieName='" + movieName + '\'' +
-                ", actorNAme='" + actorNAme + '\'' +
-                ", gender='" + genre + '\'' +
-                ", actor=" + actor +
-                '}';
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println(applicationContext);
+        Actor actor=(Actor)applicationContext.getBean("actor");
+        System.out.println(actor);
     }
-
 }
