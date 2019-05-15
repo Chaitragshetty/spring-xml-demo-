@@ -5,58 +5,16 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--     bean definitions here-->
-<!--    <bean id ="movie" class="com.stackroute.springApplication.beans.Movie" scope="prototype">-->
-
-<!--        <constructor-arg name="movieName" value="Conguring" />-->
-
-<!--        <constructor-arg name="actorName" value="Robert Jr" />-->
-
-<!--        <constructor-arg name="genre" value="Horror" />-->
-<!--    </bean>-->
-
-
-<!--   </bean>&ndash;&gt;-->
-
-
-
-
-    <bean id="movie4" autowire="byType" class="com.stackroute.springApplication.beans.Movie">
-        <property name="movieName" value="ABCD"></property>
-        <property name="director" value="REMO"></property>
-    </bean>
-
-    <!--    <bean id="Actor" class="com.stackroute.domain.Actor">-->
-    <!--        <property name="name" value="aart"></property>-->
-    <!--        <property name="age" value="26"></property>-->
-    <!--        <property name="gender" value="male"></property>-->
-    <!--    </bean>-->
-
-    <bean id="movie5" autowire="byName" class="com.stackroute.springApplication.beans.Movie">
-        <property name="movieName" value="ABCD"></property>
-        <property name="director" value="REMO"></property>
-    </bean>
-
+    <!-- bean definitions here -->
     <bean id="actor" class="com.stackroute.springApplication.beans.Actor">
-        <property name="name" value="aarti"></property>
-        <property name="age" value="20"></property>
-        <property name="gender" value="male"></property>
+        <property name="name" value="Sudeep"/>
+        <property name="gender" value="Male"/>
+        <property name="age" value="45"/>
     </bean>
-
-    <!--    <bean id="movie6" autowire="constructor" class="com.stackroute.domain.Movie">-->
-    <!--        <property name="movieName" value="ABCD"></property>-->
-    <!--        <property name="director" value="REMO"></property>-->
-    <!--    </bean>-->
-
-    <!--    <bean id="actor" class="com.stackroute.domain.Actor">-->
-    <!--        <constructor-arg index="0" value="Varun"></constructor-arg>-->
-    <!--        <constructor-arg index="1" value="30"></constructor-arg>-->
-    <!--        <constructor-arg index="2" value="Male"></constructor-arg>-->
-    <!--    </bean>-->
-    <bean id="lifecycledemo" class="com.stackroute.springApplication.beans.LifeCycleDemo" init-method="customInit" destroy-method="customDestroy">
-
+    <bean id="movie" class="com.stackroute.springApplication.beans.Movie">
+        <property name="actor">
+            <ref bean="actor"></ref>
+        </property>
     </bean>
-
-    <bean id="postprocessor" class="com.stackroute.springApplication.beans.PostProcessorDemo"></bean>
 
 </beans>
